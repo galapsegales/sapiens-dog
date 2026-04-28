@@ -1,0 +1,142 @@
+@use '../abstracts/variables' as *;
+@use 'sass:color';
+
+/* Mixins */
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* BREAKPOINTS */
+
+@mixin breakpoint($bp) {
+  @if $bp == tablet {
+    @media (min-width: $bp-tablet) {
+      @content;
+    }
+  }
+
+  @if $bp == tablethorizontal {
+    @media (min-width: $bp-tablet-horizontal) {
+      @content;
+    }
+  }
+
+  @if $bp == desktop {
+    @media (min-width: $bp-desktop) {
+      @content;
+    }
+  }
+
+  @if $bp == desktopxl {
+    @media (min-width: $bp-desktop-xl) {
+      @content;
+    }
+  }
+}
+
+/* BUTTONS */
+
+@mixin button($bg-color: $white, $text-color: $black, $border-color: $black) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+
+  width: fit-content;
+  
+  padding: 0.8rem 2rem;
+  background-color: $bg-color;
+  color: $text-color;
+  
+  text-decoration: none;
+  border-radius: 100px; 
+  border: 2px solid $border-color;
+
+  transition: 0.3s;
+  box-shadow: 0px 6px 0px -2px color.adjust($bg-color, $lightness: -50%);
+
+  span {
+    line-height: 1;
+    font-family: $font-stack;
+    font-weight: 400;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+  }
+
+  img {
+    width: 1rem;
+    height: auto;
+    display: block;
+  }
+
+  &:hover {
+    box-shadow: 0 0 #fff;
+    transform: translateY(1px);
+    //animation: pulse 1s infinite;
+  }
+}
+
+@mixin button-contacto {
+  border: 2px solid $black;
+  box-shadow: 0px 6px 0px -2px $black;
+  color: $black;
+  font-family: $font-secondary;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 8px 0px -2px $black;
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0px 4px 0px -2px $black;
+  }
+}
+
+/* EFFECTS */
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes scroll-text {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.33%);
+  }
+}
+
+@keyframes latido-suave {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+
+
+

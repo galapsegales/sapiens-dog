@@ -1,0 +1,50 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+
+/* Buttons */
+
+.team-card__button,
+.blog-card__button {
+    @include button($blue, $black, $white);
+    box-shadow: 0px 6px 0px -2px $light-blue;
+}
+
+.cursos-card__button {
+    @include button($violet, $black, $black);
+}
+
+.cursos-card__button--fullstack {
+    @include button($light-yellow, $black, $black)
+}
+
+.cursos-card__button--ia {
+    @include button($blue, $black, $black)
+}
+
+.curso-card__button--ciber {
+    @include button($green, $black, $black)
+}
+
+.curso-card__button--block {
+    @include button($purple, $black, $black)
+}
+
+.blog1-card__button {
+    @include button($orange, $black, $black);
+    z-index: 1;
+}
+
+.blog2-card__button {
+    @include button($green, $black, $black);
+    z-index: 1;
+}
+
+.blog-post__button {
+    @include button($yellow, $black, $black);
+    z-index: 1;
+}
+
+.contacto-form__button,
+.contacto-card__button {
+    @include button-contacto;
+}

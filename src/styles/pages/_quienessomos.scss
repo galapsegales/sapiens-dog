@@ -1,0 +1,259 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+
+/* Quiénes Somos */
+
+.equipo-section {
+    background-color: $white;
+    border-radius: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    padding: 4rem 1rem 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+
+    &__header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+
+        @include breakpoint(desktop) {
+            padding-top: 4rem;
+        }
+    }
+
+    &__title {
+        position: relative;
+        margin-top: 3rem;
+
+        &-text {
+            color: $black;
+            font-size: 1.5rem;
+            font-weight: 400;
+            line-height: 220%;
+            text-align: end;
+
+            >span {
+                font-size: 5rem;
+            }
+        }
+
+        &-decoration {
+            position: absolute;
+            width: 10rem;
+            top: -20%;
+            left: -37%;
+
+            @include breakpoint(desktop) {
+                animation: latido-suave 2s ease-in-out infinite;
+                display: inline-block;
+            }
+        }
+    }
+
+    &__subtitle {
+        color: $black;
+        width: 80%;
+        font-size: 1.35rem;
+        font-weight: lighter;
+        text-align: center;
+    }
+
+    &__profesores {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    @include breakpoint(tablet) {
+        margin-top: 3rem;
+        &__title {
+            &-text {
+                font-size: 3rem;
+                line-height: 150%;
+
+                >span {
+                    font-size: 7rem;
+                }
+            }
+
+            &-decoration {
+                width: 12rem;
+            }
+        }
+
+        &__profesores {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 2rem;
+        }
+    }
+}
+
+.profesor-card {
+    border-radius: 1.5rem;
+    border: 2px solid $black;
+    padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    &__foto {
+        width: 12rem;
+        height: 12rem;
+        border-radius: 50%;
+        border: 2px solid $black;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $white;
+        margin-bottom: 1rem;
+
+        @include breakpoint(desktop) {
+            width: 16rem;
+            height: 16rem;
+        }
+
+        &-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__nombre {
+        color: $white;
+        font-size: 2rem;
+        font-weight: 400;
+        line-height: 160%;
+        text-align: center;
+
+        >span {
+            color: $black;
+            font-size: 4rem;
+            font-weight: bold;
+        }
+    }
+
+    &__rol {
+        border: 2px solid black;
+        box-shadow: 0px 6px 0px -2px $black;
+        color: $black;
+        font-family: $font-secondary;
+        font-size: 1.1rem;
+        font-weight: 600;
+        text-align: center;
+        padding: 0.5rem;
+        background-color: white;
+    }
+
+    &--bienvenido {
+        background-color: $blue;
+    }
+
+    &--alan {
+        background-color: $violet;
+    }
+
+    &--elena {
+        background-color: $green;
+    }
+
+    &--chema {
+        background-color: $light-yellow;
+    }
+}
+
+.empresas-section {
+    padding: 1rem 0 4rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+
+    &__titulo {
+        color: $white;
+        font-family: $font-secondary;
+        font-size: 1.2rem;
+        font-weight: 300;
+        text-align: center;
+    }
+
+    &__grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+}
+
+.empresa-tag {
+    border: 2px solid $black;
+    border-radius: 1.5rem;
+    padding: 0.8rem 1.2rem;
+    font-family: $font-secondary;
+    font-weight: 500;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: $black;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    cursor: default;
+    flex: 1 1 auto;
+    text-align: center;
+    min-width: fit-content;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    &--blue {
+        background-color: $blue;
+    }
+
+    &--violet {
+        background-color: $violet;
+    }
+
+    &--yellow {
+        background-color: $yellow;
+    }
+
+    &--orange {
+        background-color: $orange;
+    }
+
+    &--green {
+        background-color: $green;
+    }
+
+    &--purple {
+        background-color: $purple;
+    }
+
+    &--light-blue {
+        background-color: $light-blue;
+    }
+
+    &--light-yellow {
+        background-color: $light-yellow;
+    }
+
+    &--light-violet {
+        background-color: $light-violet;
+    }
+
+    &--light-green {
+        background-color: $light-green;
+    }
+}
