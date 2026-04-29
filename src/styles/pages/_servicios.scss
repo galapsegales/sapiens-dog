@@ -49,7 +49,7 @@
             position: absolute;
             width: 10rem;
             top: -20%;
-            left: -33%;
+            left: -25%;
 
             @include breakpoint(desktop) {
                 animation: latido-suave 2s ease-in-out infinite;
