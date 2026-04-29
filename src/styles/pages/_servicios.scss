@@ -1,9 +1,9 @@
 @use '../abstracts/mixins' as *;
 @use '../abstracts/variables' as *;
 
-/* Página Cursos */
+/* Página Servicios */
 
-.cursos-section {
+.servicios-section {
     background-color: $white;
     border-radius: 1.5rem;
     margin-top: 1rem;
@@ -99,8 +99,8 @@
     }
 }
 
-/* Curso Card */
-.curso-card {
+/* Servicio Card */
+.servicio-card {
     border-radius: 1.5rem;
     border: 2px solid $black;
     padding: 2rem 1.5rem;

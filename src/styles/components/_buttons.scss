@@ -9,23 +9,23 @@
     box-shadow: 0px 6px 0px -2px $light-blue;
 }
 
-.cursos-card__button {
+.servicios-card__button {
     @include button($violet, $black, $black);
 }
 
-.cursos-card__button--fullstack {
+.servicios-card__button--fullstack {
     @include button($light-yellow, $black, $black)
 }
 
-.cursos-card__button--ia {
+.servicios-card__button--ia {
     @include button($blue, $black, $black)
 }
 
-.curso-card__button--ciber {
+.servicio-card__button--ciber {
     @include button($green, $black, $black)
 }
 
-.curso-card__button--block {
+.servicio-card__button--block {
     @include button($purple, $black, $black)
 }
 

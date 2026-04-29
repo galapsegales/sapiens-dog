@@ -95,10 +95,10 @@
 
             &--img {
                 margin-top: -10rem;
-                content: url('../../img/herobienve-tablet.png'); 
+                content: url('../../img/coop-tablet.png'); 
 
                 @include breakpoint(desktop) {
-                    content: url('../../img/herobienve-desktop.png');
+                    content: url('../../img/coop-desktop.png');
                     
                 }
             }
