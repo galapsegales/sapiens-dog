@@ -3,6 +3,21 @@
 
 /* Home */
 
+.reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    visibility: hidden;
+    transition: opacity 0.5s ease, transform 0.5s ease, visibility 0s linear 0.5s;
+    will-change: opacity, transform;
+}
+
+.reveal--active {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+    transition-delay: 0.2s;
+}
+
 .team-card {
     padding-top: 8rem;
     padding-bottom: 8rem;

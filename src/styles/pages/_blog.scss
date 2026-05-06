@@ -4,12 +4,17 @@
 /* Página Blog */
 
 .blog-section {
-    padding-top: 8rem;
-    padding-bottom: 2rem;
+    background-color: $white;
+    border-radius: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    padding: 4rem 1rem 1rem 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 3rem;
+    
+
 
     &__header {
         display: flex;
@@ -19,18 +24,20 @@
         padding-bottom: 1rem;
 
         @include breakpoint(desktop) {
-            padding-top: 5rem;
+            padding-top: 4rem;
         }
     }
 
     &__title {
         position: relative;
+        margin-top: 3rem;
 
         &-text {
-            color: $green;
+            color: $black;
             font-size: 1.5rem;
             font-weight: 400;
             line-height: 220%;
+            text-align: end;
 
             >span {
                 font-size: 5rem;
@@ -41,7 +48,7 @@
             position: absolute;
             width: 10rem;
             top: -37%;
-            right: -45%;
+            left: -52%;
 
             @include breakpoint(desktop) {
                 animation: latido-suave 2s ease-in-out infinite;
@@ -51,28 +58,27 @@
     }
 
     &__subtitle {
-        color: $white;
-        width: 70%;
+        color: $black;
+        width: 80%;
         font-size: 1.35rem;
         font-weight: lighter;
         text-align: center;
-        padding-bottom: 0rem;
     }
 
     &__posts {
         width: 100%;
         display: flex;
         flex-direction: column;
-        align-items: center;
-        gap: 3rem;
+        gap: 2rem;
     }
 
     @include breakpoint(tablet) {
+        margin-top: 3rem;
         &__title {
             &-text {
-                text-align: center;
                 font-size: 3rem;
                 line-height: 190%;
+                text-align: center;
 
                 >span {
                     font-size: 9rem;
@@ -81,22 +87,29 @@
 
             &-decoration {
                 width: 12rem;
-                top: -33%;
-                right: -35%;
+                top: -27%;
+                left: -40%;
+
+
+                @include breakpoint(desktop) {
+                    top: -27%
+                }
 
             }
         }
 
-        &__subtitle {
-            font-size: 2rem;
+        &__posts {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 2rem;
+            align-items: start;
         }
     }
 
     @include breakpoint(desktop) {
         &__posts {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: repeat(2, 1fr);
+            grid-template-columns: repeat(1, 1fr);
             gap: 3rem;
         }
     }
@@ -105,6 +118,7 @@
 /* Blog Post */
 .blog-post {
     border-radius: 1.5rem;
+    border: 2px solid $black;
     padding: 3rem 1.5rem;
     display: flex;
     flex-direction: column;
@@ -138,6 +152,15 @@
         gap: 1.5rem;
         align-items: center;
         width: 100%;
+        font-family: $font-secondary;
+        
+        * {
+            font-family: $font-secondary;
+        }
+        
+        h4 {
+            font-family: $font-stack !important;
+        }
     }
 
     &__title {
@@ -146,6 +169,66 @@
         line-height: 125%;
         width: 100%;
         color: $black;
+        font-family: $font-stack;
+    }
+
+    &__image {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 1rem;
+        overflow: hidden;
+        display: block;
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        max-height: 260px;
+        margin: 0 auto;
+        position: relative;
+
+        &--tall {
+            max-height: 400px;
+
+            img {
+                object-position: center center !important;
+                object-fit: cover;
+            }
+        }
+        
+        &:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            display: block;
+            border-radius: 1rem;
+        }
+
+        &--overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-family: $font-secondary;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-transform: capitalize;
+            z-index: 2;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.65);
+            }
+        }
     }
 
     &__excerpt {
@@ -155,7 +238,40 @@
         text-align: center;
         width: 100%;
         color: $black;
-        font-weight: 300;
+        font-weight: 400;
+    }
+
+    &__subtitle {
+        font-size: 1.35rem;
+        font-weight: 700;
+        color: $black;
+        margin-top: 1.5rem;
+        margin-bottom: 0.75rem;
+        text-align: left;
+        width: 100%;
+        font-family: $font-secondary;
+    }
+
+    &__list {
+        text-align: left;
+        width: 100%;
+        margin: 1rem 0;
+        padding-left: 1.5rem;
+        font-family: $font-secondary;
+        
+        li {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+            color: $black;
+            font-weight: 300;
+        }
+    }
+
+    p {
+        text-align: left;
+        width: 100%;
+        line-height: 1.6;
+        color: $black;
     }
 
     &__video {
@@ -181,6 +297,49 @@
 
     .btn {
         z-index: 1;
+    }
+
+    &__book {
+        border: 2px solid black;
+        box-shadow: 0px 6px 0px -2px $black;
+        color: $black;
+        font-family: $font-secondary;
+        font-size: 1rem;
+        font-weight: 600;
+        text-align: left;
+        padding: 1.5rem;
+        background-color: white;
+        width: 100%;
+        margin: 1rem 0;
+        border-radius: 0.5rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0px 8px 12px -2px $black;
+        }
+
+        strong {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            color: $black;
+        }
+
+        em {
+            display: block;
+            font-style: italic;
+            font-weight: 500;
+            margin: 0.5rem 0;
+            color: #666;
+        }
+
+        p {
+            margin: 0.5rem 0;
+            font-weight: 400;
+            line-height: 1.6;
+            text-align: left;
+        }
     }
 
     /* Colors */
@@ -212,7 +371,7 @@
         }
 
         &__excerpt {
-            font-weight: 700;
+            font-weight: 400;
         }
 
         &__video {
@@ -221,22 +380,16 @@
     }
 
     @include breakpoint(desktop) {
-        height: 100%;
-        
-        &__content {
-            height: 100%;
-            justify-content: space-between;
-        }
-
         &__title {
-            min-height: 10rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            font-size: 3.5rem;
         }
 
         &__excerpt {
-            flex-grow: 1;
+            font-weight: 400;
+        }
+
+        &__video {
+            max-width: calc(560px + 4rem);
         }
     }
 }
